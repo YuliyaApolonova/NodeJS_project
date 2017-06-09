@@ -1,0 +1,30 @@
+extends layout.pug
+block scripts
+    script(src='js/validation.js')
+block content
+
+     include header.pug
+
+     .panel
+         .container
+             .row
+                 .col-xs-12.col-md-6.pull-right
+                     form#login-form.login-section(name='loginForm', method='POST', action='/login', onsubmit='return validate(loginForm)')
+                         .login-section-col
+                             input(type='text', name='username', placeholder='Username')
+                             input(type='password', name='password', placeholder='Password')
+                         .login-section-col
+                             input.btn(type='submit', value='Log In')
+                 .col-xs-12.col-md-6.pull-left
+                     h1.page-title Check out our work
+
+
+block footer
+    #footer
+        p are you impressed by our creativity
+        button contact us right now
+
+
+
+
+
