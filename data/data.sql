@@ -62,7 +62,8 @@ INSERT INTO `projects` (`id`, `title`, `author`, `description`, `category`, `src
 CREATE TABLE IF NOT EXISTS `sessions` (
   `session_id` varchar(255) NOT NULL,
   `expires` int(11) NOT NULL,
-  `data` varchar(255) NOT NULL
+  `data` varchar(255) NOT NULL,
+   UNIQUE KEY `session_id` (`session_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

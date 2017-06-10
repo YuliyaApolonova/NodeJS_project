@@ -1,5 +1,22 @@
 extends layout
-
+block scripts
+    script(src='js/contactValidation.js')
 block content
     include header
-    p this is contact
+    iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.8359291561046!2d30.450614817669607!3d50.444156663504785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce87a0bfa6d3%3A0x19327c76da170b91!2sIgnite+Ukraine!5e0!3m2!1sru!2sua!4v1474789633419', width="100%", height="400", frameBorder="0", style="border:0", allowFullScreen)
+    .container.contact-container
+        .col-xs-12.col-md-offset-2.col-md-8
+            h1.contact-form-title Contact form
+            form.contact-form(name='contactForm', action='/send-mail', method='POST', enctype="text/plain", onsubmit='return contactValidate(contactForm)')
+                input(type='text', name='name', placeholder='Name')
+                span.error(style='display:none') Use only English characters!
+                input(type='text', name='email', placeholder='Email Address')
+                span.error(style='display:none') Invalid email!
+                input(type='text', name='subject', placeholder='Subject')
+                span.error(style='display:none') Use only English characters!
+                textarea.message(name='message', placeholder='Message')
+                span.error(style='display:none') Too short message (at least 20 characters)
+                input.btn.btn-contact(type='submit', style='color:white', value='Send message')
+
+block footer
+    include footer

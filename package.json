@@ -23,6 +23,7 @@
     "express": "^4.15.3",
     "express-mysql-session": "^1.2.1",
     "express-session": "^1.15.3",
+    "mysql": "^2.13.0",
     "pug": "^2.0.0-rc.2"
   }
 }
