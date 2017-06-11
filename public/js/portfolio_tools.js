@@ -20,7 +20,7 @@ window.onload = function(){
                break;
             case 'remove':
                var xhr = new XMLHttpRequest();
-               xhr.open('GET', 'edit/'+ e.target.dataset.id);
+               xhr.open('DELETE', 'edit/'+ e.target.dataset.id);
                xhr.send();
                xhr.onload = function(){
                   location.href= '/home';

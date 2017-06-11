@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    include header
+    .panel
+        .container
+            .row
+                .col-xs-12.col-md-6.pull-left
+                    h1.page-title Edit project info
+    section
+        .container
+            ul#category-list.works-nav
+                li.works-nav-item(data-category='all')
+                    span.nav-link.active(data-category='all') All
+                li.works-nav-item(data-category='print')
+                    span.nav-link(data-category='print') Print
+                li.works-nav-item(data-category='photography')
+                    span.nav-link(data-category='photography') Photography
+                li.works-nav-item(data-category='web')
+                    span.nav-link(data-category='web') Web
+                li.works-nav-item(data-category='applications')
+                    span.nav-link(data-category='applications') Applications
+                .row.works-content-container
+                    img.col-xs-offset-1.col-xs-10.col-sm-offset-1.col-sm-5.col-md-offset-1.col-md-4(src='')
+                    form
+                        .col-xs-offset-1.col-xs-10.col-sm-offset-1.col-sm-4.col-md-offset-1.colmd-4.input-content
+                            input.edit-input(name='title', type='text', value=''
