@@ -24,6 +24,8 @@
     "express-mysql-session": "^1.2.1",
     "express-session": "^1.15.3",
     "mysql": "^2.13.0",
+    "nodemailer": "^4.0.1",
+    "nodemailer-smtp-transport": "^2.7.4",
     "pug": "^2.0.0-rc.2"
   }
 }

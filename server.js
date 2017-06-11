@@ -16,11 +16,15 @@ var port = process.env.port || 1337;
 var index = require('./js_queries/index');
 var contact = require('./js_queries/contact');
 var login = require('./js_queries/login');
+var sendMail = require('./js_queries/send-mail');
+var portfolio = require('./js_queries/portfolio')
 
 app.use(express.static('public'));
 // middleware для обработки тела запроса в кодировке urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(bodyParser.json());
+app.use(bodyParser.text());
+app.use(cookieParser());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -36,6 +40,8 @@ app.use(session({
 app.use(index);
 app.use(contact);
 app.use(login);
+app.use(sendMail);
+app.use(portfolio);
 
 app.listen(port, function() {
    console.log('app running on port ' + port);

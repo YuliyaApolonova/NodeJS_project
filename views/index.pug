@@ -1,6 +1,10 @@
 extends layout.pug
 block scripts
     script(src='js/validation.js')
+    script(src='js/filter.js' )
+        script.
+            console.log('hello!');
+
 block content
 
      include header.pug
@@ -17,6 +21,22 @@ block content
                              input.btn(type='submit', value='Log In')
                  .col-xs-12.col-md-6.pull-left
                      h1.page-title Check out our work
+     section
+         .container
+             ul#category-list.works-nav
+                 li.works-nav-item(data-category='all')
+                      span.nav-link.active(data-category='all') All
+                 li.works-nav-item(data-category='print')
+                      span.nav-link(data-category='print') Print
+                 li.works-nav-item(data-category='photography')
+                      span.nav-link(data-category='photography') Photography
+                 li.works-nav-item(data-category='web')
+                      span.nav-link(data-category='web') Web
+                 li.works-nav-item(data-category='applications')
+                      span.nav-link(data-category='applications') Applications
+             .row.works-content-container
+                 ul.works-content
+                     div!=data
 
 
 block footer

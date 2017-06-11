@@ -1,0 +1,14 @@
+extends layout
+block content
+    include header
+
+    #registration-container
+        form(name='registrationForm', method='POST', action='/sign-in')
+            input(type='text', name='name')
+            input(type='text', name='password')
+            input(type='submit', value='sign in')
+
+
+
+
+    include footer

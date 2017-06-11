@@ -3,21 +3,14 @@
  */
 var express = require('express');
 var router = express.Router();
-
+var displayHandler = require('../public/js/displayHandler');
 
 /* GET home page. */
-router.get('/home', function(req, res) {
-   res.render('index', {});
-})
-//    projects.getByCategory(null, function (err, data) {
-//       if (err) {
-//          console.log(err);
-//          res.render('index', { authorised: req.session.user, projects: [] });
-//       } else {
-//          res.render('index', { authorised: req.session.user, projects: data });
-//       }
-//    })
-// });
+// router.get('/home', function(req, res) {
+//    res.render('index', {});
+// })
+
+router.get('/home', displayHandler.displayItems);
 
 router.get('/', function (req, res) {
    res.redirect('/home');
