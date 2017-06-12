@@ -1,5 +1,6 @@
 extends layout
-
+block scripts
+    script(src='../js/upload.js')
 block content
     include header
     .panel
@@ -21,3 +22,17 @@ block content
                 li.works-nav-item(data-category='applications')
                     span.nav-link(data-category='applications') Applications
             .row.works-content-container
+                form(action='/upload', method='POST', enctype = 'multipart/form-data')
+                    .col-xs-10.col-xs-offset-1.col-sm-5.col-sm-offset-1.col-md-offset-1.col-md-4
+                        .addFile-content
+                            label.fa.fa-plus
+                        input#file(type='file', name='addFile')
+                    .col-xs-10.col-xs-offset-1.col-sm-4.col-sm-offset-1.col-md-offset-1.col-md-4.input-content
+                        input.edit-input(name='sample_file', type='file')
+                        input.edit-input(name='title', type='text', placeholder='Project title')
+                        input.edit-input(name='author', type='text', placeholder='Project author')
+                        input.edit-input(name='category', type='text', placeholder='Project category')
+                    .col-xs-10.col-xs-offset-1.col-sm-10.col-sm-offset-1.col-md-offset-1.col-md-8
+                        textarea.description(name='description', rows='10', placeholder='Description')
+                    .col-xs-10.col-xs-offset-1.col-sm-10.col-sm-offset-1.col-md-offset-1.col-md-8
+                        input.btn.btn-contact(id='addProject', value='Done')

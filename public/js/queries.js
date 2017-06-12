@@ -23,6 +23,7 @@ module.exports = {
                                     <a data-id=${row.id} ><i data-id=${row.id} data-tool="info" class="fa fa-info"></i></a>
                                 </div>
                                 <a data-id=${row.id}  class="link-delete"><i data-id=${row.id} data-tool="remove" class="fa fa-remove"></i></a>
+                   
                             </span>
                         </div>
                     </li> `)

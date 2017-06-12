@@ -13,6 +13,10 @@ const sessionStore = require('./public/js/session_handler');
 
 var port = process.env.port || 1337;
 
+var multer = require('multer');
+var upload = multer({dest: 'public/uploads'});
+var type = upload.single('sample_file');
+
 var index = require('./js_queries/index');
 var contact = require('./js_queries/contact');
 var login = require('./js_queries/login');
@@ -22,6 +26,7 @@ var edit = require('./js_queries/edit');
 var update = require('./js_queries/update');
 var remove = require('./js_queries/delete');
 var info = require('./js_queries/info');
+var newProject = require('./js_queries/new');
 
 app.use(express.static('public'));
 // middleware для обработки тела запроса в кодировке urlencoded
@@ -50,6 +55,7 @@ app.use(edit);
 app.use(update);
 app.use(remove);
 app.use(info);
+app.use(newProject);
 
 app.listen(port, function() {
    console.log('app running on port ' + port);

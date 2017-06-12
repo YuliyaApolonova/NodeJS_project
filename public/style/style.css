@@ -336,6 +336,11 @@ a {
     line-height: 38px;
 }
 
+/*.link-add i{*/
+    /*margin-top: 50px;*/
+    /*margin-left: 100px;*/
+/*}*/
+
 .works-item-add {
     opacity: 1;
 }

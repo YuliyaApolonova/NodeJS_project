@@ -3,6 +3,7 @@ block scripts
     script(src='js/validation.js')
     script(src='../js/filter.js')
     script(src='../js/portfolio_tools.js')
+    script(src='../js/add.js')
 
 block content
 
@@ -33,6 +34,8 @@ block content
                       span.nav-link(data-category='web') Web
                  li.works-nav-item(data-category='applications')
                       span.nav-link(data-category='applications') Applications
+                 a#link-add Add new
+                      i.fa.fa-plus-circle
              .row.works-content-container
                  ul.works-content
                      div!=data
