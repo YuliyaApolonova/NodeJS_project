@@ -2,7 +2,7 @@
  * Created by jull on 12.06.2017.
  */
 window.onload = function(){
-   alert('dvdjkvj');
+
     var editBtn = document.getElementById('submit');
     var form = document.getElementById('edit-form');
     var elems = form.elements;

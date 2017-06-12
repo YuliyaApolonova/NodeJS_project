@@ -2,6 +2,7 @@
  * Created by jull on 11.06.2017.
  */
 window.onload = function(){
+   alert('smth');
    var ul = document.getElementById('category-list');
    var container = document.getElementsByClassName('works-content')[0];
    ul.addEventListener('click', function(e){
