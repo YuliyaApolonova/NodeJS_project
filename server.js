@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var app = express();
-var path = require('path')
+var path = require('path');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 
@@ -27,6 +27,7 @@ var update = require('./js_queries/update');
 var remove = require('./js_queries/delete');
 var info = require('./js_queries/info');
 var newProject = require('./js_queries/new');
+var upload = require('./js_queries/upload');
 
 app.use(express.static('public'));
 // middleware для обработки тела запроса в кодировке urlencoded
@@ -56,6 +57,7 @@ app.use(update);
 app.use(remove);
 app.use(info);
 app.use(newProject);
+app.use(upload);
 
 app.listen(port, function() {
    console.log('app running on port ' + port);

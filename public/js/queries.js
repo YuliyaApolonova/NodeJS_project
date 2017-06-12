@@ -92,6 +92,33 @@ module.exports = {
             console.log('item removed from database!');
          }
       })
+   },
+   addItem: function(data, src, connection){
+      var self = this;
+      var date = new Date();
+      var dd = date.getDate();
+      if (dd < 10) dd = '0' + dd;
+
+      var mm = date.getMonth() + 1;
+      if (mm < 10) mm = '0' + mm;
+
+      var yyyy = date.getFullYear();
+
+      date = yyyy + '-' + mm + '-' + dd;
+
+      var sql = 'INSERT INTO `projects` (title, author, description, category, src, date  ) VALUES (?, ?, ?, ?, ?, ?)'
+      var inserts = [data.title, data.author, data.description, data.category, src, date];
+      console.log(inserts);
+      var sql = mysql.format(sql, inserts);
+
+      // запрос к бд
+      return query = connection.query(sql, function (err, rows) {
+         if (err) {
+            console.log(err);
+            return;
+         }
+         console.log('item added into database!');
+      })
    }
 }
 

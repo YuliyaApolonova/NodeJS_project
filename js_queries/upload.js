@@ -4,14 +4,21 @@
 
 var express = require('express');
 var router = express.Router();
-var addHandler = require('../public/js/addHandler')
+var addHandler = require('../public/js/addHandler');
+
+var multer = require('multer');
+var upload = multer({dest: 'public/uploads'});
+var type = upload.single('sample_file');
+var path = require('path');
+const fs = require('fs');
 
 router.get('/upload', function(req, res) {
    console.log('Image uploaded');
 })
 
-router.post('/upload', function(req, res){
+router.post('/upload', type, function(req, res){
    console.log(req.file);
+   console.log(req.file.destination + '' + req.file.path);
 
    // файл временного хранения данных
    var tmp_path = req.file.path;
