@@ -19,15 +19,18 @@ window.onload = function(){
                }
                break;
             case 'remove':
-               var xhr = new XMLHttpRequest();
-               xhr.open('DELETE', 'edit/'+ e.target.dataset.id);
-               xhr.send();
-               xhr.onload = function(){
-                  location.href= '/home';
+               var result = confirm('Are you sure to delete this project?');
+               if(result){
+                  var xhr = new XMLHttpRequest();
+                  xhr.open('DELETE', 'edit/'+ e.target.dataset.id);
+                  xhr.send();
+                  xhr.onload = function(){
+                     location.href= '/home';
+                  }
                }
                break;
             case 'info':
-               var xhr = newXMLHttpRequest();
+               var xhr = new XMLHttpRequest();
                xhr.open('GET', '/view/'+ e.target.dataset.id);
                xhr.send();
                xhr.onload = function(){

@@ -23,7 +23,7 @@ block content
                 li.works-nav-item(data-category='applications')
                     span.nav-link(data-category='applications') Applications
                 .row.works-content-container
-                    img.col-xs-offset-1.col-xs-10.col-sm-offset-1.col-sm-5.col-md-offset-1.col-md-4(src='')
+                    img.col-xs-offset-1.col-xs-10.col-sm-offset-1.col-sm-5.col-md-offset-1.col-md-4(src='http://localhost:1337/'+ item.src)
                     form#edit-form(name='editForm')
                         .col-xs-offset-1.col-xs-10.col-sm-offset-1.col-sm-4.col-md-offset-1.colmd-4.input-content
                             input.edit-input(name='title', type='text', value!=item.title)

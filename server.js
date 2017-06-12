@@ -20,6 +20,8 @@ var sendMail = require('./js_queries/send-mail');
 var portfolio = require('./js_queries/portfolio');
 var edit = require('./js_queries/edit');
 var update = require('./js_queries/update');
+var remove = require('./js_queries/delete');
+var info = require('./js_queries/info');
 
 app.use(express.static('public'));
 // middleware для обработки тела запроса в кодировке urlencoded
@@ -46,6 +48,8 @@ app.use(sendMail);
 app.use(portfolio);
 app.use(edit);
 app.use(update);
+app.use(remove);
+app.use(info);
 
 app.listen(port, function() {
    console.log('app running on port ' + port);

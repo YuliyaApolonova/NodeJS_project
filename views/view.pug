@@ -1,0 +1,39 @@
+extends layout
+
+block scripts
+    include header
+block content
+    .panel
+        .container
+            .row
+                .col-xs-12.col-md-6.pull-left
+                    h1.page-title Check out our work
+    section
+        .container
+            ul#category-list.works-nav
+                li.works-nav-item(data-category='all')
+                    span.nav-link.active(data-category='all') All
+                li.works-nav-item(data-category='print')
+                    span.nav-link(data-category='print') Print
+                li.works-nav-item(data-category='photography')
+                    span.nav-link(data-category='photography') Photography
+                li.works-nav-item(data-category='web')
+                    span.nav-link(data-category='web') Web
+                li.works-nav-item(data-category='applications')
+                    span.nav-link(data-category='applications') Applications
+            .row.works-content-container.info-container
+                img.col-xs-offset-1.col-xs-10.col-sm-offset-1.col-sm-1.col-md-offset-1.col-md-8(src='http://localhost:1337/'+ item.src)
+                .col-xs-10.col-xs-offset-1.col-sm-4.col-sm-offset-1.col-md-offset-1.col-md-4.info-content
+                    h1!=item.title
+                    div
+                        p!=item.author
+                        i.fa.fa-user
+                    div
+                        p!=date
+                        i.fa.fa-calendar
+                .col-xs-10.col-xs-offset-1.col-sm-10.col-sm-offset-1.col-md-offset-1.col-md-8
+                    p!=item.description
+
+
+block footer
+    include footer

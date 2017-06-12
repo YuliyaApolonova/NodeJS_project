@@ -76,6 +76,21 @@ module.exports = {
              }
          });
          return query;
+   },
+   removeItem: function (id, connection) {
+      // форматирование запроса
+      var sql = 'DELETE FROM `projects` WHERE id=?';
+      var inserts = id;
+      sql = mysql.format(sql, inserts);
+
+      // запрос к бд
+      return connection.query(sql, function (err) {
+         if (err) {
+            console.log(err)
+         } else {
+            console.log('item removed from database!');
+         }
+      })
    }
 }
 
