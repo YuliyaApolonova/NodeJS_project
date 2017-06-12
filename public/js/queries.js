@@ -61,6 +61,21 @@ module.exports = {
 
       });
       return query;
+   },
+   updateItem: function(data, id, connection){
+         var sql = 'UPDATE `projects` SET title=?, description=?, author=?, category=? WHERE id=?';
+         var inserts = [data.title, data.description, data.author, data.category, id];
+         sql = mysql.format(sql, inserts);
+
+         var query = connection.query(sql, function (err) {
+             if (err) {
+                console.log(err)
+             }
+             else {
+             console.log('database updated');
+             }
+         });
+         return query;
    }
 }
 

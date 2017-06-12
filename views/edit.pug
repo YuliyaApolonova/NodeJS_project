@@ -1,4 +1,6 @@
 extends layout
+block scripts
+    script(src='../js/edit_tool.js')
 
 block content
     include header
@@ -22,6 +24,13 @@ block content
                     span.nav-link(data-category='applications') Applications
                 .row.works-content-container
                     img.col-xs-offset-1.col-xs-10.col-sm-offset-1.col-sm-5.col-md-offset-1.col-md-4(src='')
-                    form
+                    form#edit-form(name='editForm')
                         .col-xs-offset-1.col-xs-10.col-sm-offset-1.col-sm-4.col-md-offset-1.colmd-4.input-content
-                            input.edit-input(name='title', type='text', value=''
+                            input.edit-input(name='title', type='text', value!=item.title)
+                            input.edit-input(name='author', type='text', value!=item.author)
+                            input.edit-input(name='category', type='text', value!=item.category)
+                        .col-xs-offset-1.col-xs-10.col-sm-offset-1.col-sm-10.col-md-offset-2.col-md-8
+                            textarea.description(rows='10')!=item.description
+                        .col-xs-offset-1.col-xs-10.col-sm-offset-1.col-sm-10.col-md-offset-2.col-md-8
+                            input.btn.btn-contact(id='submit', type='button', data-id!=item.id, value='Done')
+

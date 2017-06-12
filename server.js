@@ -19,6 +19,7 @@ var login = require('./js_queries/login');
 var sendMail = require('./js_queries/send-mail');
 var portfolio = require('./js_queries/portfolio');
 var edit = require('./js_queries/edit');
+var update = require('./js_queries/update');
 
 app.use(express.static('public'));
 // middleware для обработки тела запроса в кодировке urlencoded
@@ -44,6 +45,7 @@ app.use(login);
 app.use(sendMail);
 app.use(portfolio);
 app.use(edit);
+app.use(update);
 
 app.listen(port, function() {
    console.log('app running on port ' + port);
