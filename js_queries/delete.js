@@ -9,7 +9,7 @@ var express = require('express');
 var router = express.Router();
 var editHandler = require('../public/js/editHandler');
 
-router.get('/edit/:id', function(req, res) {
+router.delete('/delete/:id', function(req, res) {
    console.log(req.session.username);
    if (req.session.username) {
       editHandler.removeItem(req, res);

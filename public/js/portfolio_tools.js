@@ -22,7 +22,7 @@ window.onload = function(){
                var result = confirm('Are you sure to delete this project?');
                if(result){
                   var xhr = new XMLHttpRequest();
-                  xhr.open('DELETE', 'edit/'+ e.target.dataset.id);
+                  xhr.open('DELETE', 'delete/'+ e.target.dataset.id);
                   xhr.send();
                   xhr.onload = function(){
                      location.href= '/home';
