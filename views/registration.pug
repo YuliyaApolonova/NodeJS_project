@@ -1,14 +1,15 @@
 extends layout
 block content
     include header
-
+    .panel
+        .container
+            .row
+                .col-xs-12.col-md-6.pull-left
+                    h1.page-title Add new project
     #registration-container
         form(name='registrationForm', method='POST', action='/sign-in')
-            input(type='text', name='name')
-            input(type='text', name='password')
-            input(type='submit', value='sign in')
-
-
-
+            input.edit-input(type='text', name='name')
+            input.edit-input(type='text', name='password')
+            input.edit.input(type='submit', value='sign in')
 
     include footer
